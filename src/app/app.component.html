@@ -1,0 +1,22 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <textarea  id="descriptionEducation"
+             name="description"
+             rows="5"
+             [formControl]="textControl"
+  #text class="form-control" aria-label="With textarea"></textarea>
+  <button (click)="generateLettersChart(text.value); generateMarksChart(text.value)">Show Diagram</button>
+  <br>
+  <canvas style="height: 200px" id="barChart"></canvas>
+  <canvas id="markChart"></canvas>
+  <div class="form-row__description">
+    <p>You have written:</p>
+    <p>{{ descriptionLength | async }} characters,</p>
+    <p>{{wordsCount}} words</p>
+    <p>Average words length: {{wordsLength}}</p>
+  </div>
+</div>
+
+
